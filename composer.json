@@ -4,6 +4,9 @@
         "phpstan/phpstan": "^0.12.23",
         "roave/security-advisories": "dev-master"
     },
+    "require": {
+        "symfony/symfony": "^4.4"
+    },
     "autoload": {
         "psr-4": {
             "FizzBuzz\\": "src/"
