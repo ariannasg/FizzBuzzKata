@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class NumberPrinterTest extends TestCase
 {
-    public function provideMultiplesOfThree(): array
+    public function provideOnlyMultiplesOfThree(): array
     {
         return [
             [3, "Fizz"],
@@ -16,12 +16,21 @@ class NumberPrinterTest extends TestCase
         ];
     }
 
-    public function provideMultiplesOfFive(): array
+    public function provideOnlyMultiplesOfFive(): array
     {
         return [
             [5, "Buzz"],
             [10, "Buzz"],
             [25, "Buzz"],
+        ];
+    }
+
+    public function provideMultiplesOfBothThreeAndFive(): array
+    {
+        return [
+            [15, "FizzBuzz"],
+            [30, "FizzBuzz"],
+            [45, "FizzBuzz"],
         ];
     }
 
@@ -33,7 +42,7 @@ class NumberPrinterTest extends TestCase
     }
 
     /**
-     * @dataProvider provideMultiplesOfThree
+     * @dataProvider provideOnlyMultiplesOfThree
      * @param int $number
      * @param string $expected
      */
@@ -49,7 +58,7 @@ class NumberPrinterTest extends TestCase
     }
 
     /**
-     * @dataProvider provideMultiplesOfFive
+     * @dataProvider provideOnlyMultiplesOfFive
      * @param int $number
      * @param string $expected
      */
@@ -64,7 +73,12 @@ class NumberPrinterTest extends TestCase
         );
     }
 
-    public function testWeReturnFizzBuzzWhenNumberIsMultipleOfBothThreeAndFive(): void
+    /**
+     * @dataProvider provideMultiplesOfBothThreeAndFive
+     * @param int $number
+     * @param string $expected
+     */
+    public function testWeReturnFizzBuzzWhenNumberIsMultipleOfBothThreeAndFive(int $number, string $expected): void
     {
         $result = NumberPrinter::execute(15);
 
