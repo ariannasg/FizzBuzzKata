@@ -19,8 +19,7 @@ class NumberPrinterCommandTest extends TestCase
 
         $numberPrinter->expects(self::once())->method('execute');
 
-        $command = new NumberPrinterCommand();
-        $command->setNumberPrinter($numberPrinter);
+        $command = new NumberPrinterCommand($numberPrinter);
         $command->execute($input, $output);
     }
 }

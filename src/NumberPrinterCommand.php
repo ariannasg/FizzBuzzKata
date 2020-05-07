@@ -2,26 +2,20 @@
 
 namespace FizzBuzz;
 
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-
-class NumberPrinterCommand extends Command
+class NumberPrinterCommand
 {
     /**
      * @var NumberPrinter
      */
     private $numberPrinter;
 
-    public function setNumberPrinter(NumberPrinter $numberPrinter): void
+    public function __construct(NumberPrinter $numberPrinter)
     {
         $this->numberPrinter = $numberPrinter;
     }
 
-    public function execute(InputInterface $input, OutputInterface $output): int
+    public function execute(): void
     {
-        $this->numberPrinter->execute();
-
-        return 0;
+        printf($this->numberPrinter->execute());
     }
 }
