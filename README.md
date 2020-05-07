@@ -1,16 +1,15 @@
-# Project Title
-Project description
+# FizzBuzz Kata
+Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz “.
 
 * [Objectives](#objectives)
 * [Local setup](#local-setup)
 * [Testing](#testing)
-* [CI/CD](#cicd)
-* [TODOs](./TODO.md)
 * [Contributing](#contributing)
 * [License](#license)
 
 ## Objectives
-Description of project objectives.
+FizzBuzz Kata for introducing TDD.
+Try out TDD using PHPUnit for solving the FizzBuzz problem.
 
 ## Local setup
 Follow the instructions to get the project up and running for local development and testing purposes.
@@ -29,18 +28,10 @@ Follow the instructions to get the project up and running for local development 
 Add a replica of the tests run configuration in the IDE for easier development.
 
 ## Testing
-At the moment we only have unit tests in the project.
-
 For running all tests:
 ```
 make test
 ```
-
-## CI/CD
-Description of CI/CD setup.
-
-## TODOs
-List of TODOs can be found [here](TODO.md).
 
 ## Contributing
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](.github/CONTRIBUTING.md)
