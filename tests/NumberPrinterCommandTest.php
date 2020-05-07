@@ -5,8 +5,6 @@ namespace FizzBuzz\Test;
 use FizzBuzz\NumberPrinter;
 use FizzBuzz\NumberPrinterCommand;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
 
 class NumberPrinterCommandTest extends TestCase
 {
@@ -14,12 +12,9 @@ class NumberPrinterCommandTest extends TestCase
     {
         $numberPrinter = $this->getMockBuilder(NumberPrinter::class)->getMock();
 
-        $input = $this->getMockBuilder(InputInterface::class)->getMock();
-        $output = $this->getMockBuilder(OutputInterface::class)->getMock();
-
         $numberPrinter->expects(self::once())->method('execute');
 
         $command = new NumberPrinterCommand($numberPrinter);
-        $command->execute($input, $output);
+        $command->execute();
     }
 }
