@@ -8,7 +8,21 @@ class NumberPrinter
     private const MULTIPLE_OF_THREE = 'Fizz';
     private const MULTIPLE_OF_FIVE = 'Buzz';
 
-    public static function execute(int $number): string
+    public static function execute(): string
+    {
+        $result = '';
+
+        for ($number = 1; $number <= 10; $number++) {
+            $result.= self::convertNumber($number);
+
+            if ($number <= 9) {
+                $result.= "\n";
+            }
+        }
+        return $result;
+    }
+
+    public static function convertNumber(int $number): string
     {
         if (self::isMultipleOfBothThreeAndFive($number)) {
             return self::MULTIPLE_OF_THREE_AND_FIVE;
@@ -50,18 +64,5 @@ class NumberPrinter
     private static function isMultipleOfFive(int $number): bool
     {
         return $number % 5 === 0;
-    }
-
-    public static function printNumbers(): string
-    {
-        $result = '';
-        for ($i = 1; $i <= 10; $i++) {
-            $result.= self::execute($i);
-
-            if ($i <= 9) {
-                $result.= "\n";
-            }
-        }
-        return $result;
     }
 }

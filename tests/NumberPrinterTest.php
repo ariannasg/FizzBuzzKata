@@ -50,7 +50,7 @@ class NumberPrinterTest extends TestCase
      */
     public function testWeReturnTheSameNumberWhenIsNotAMultipleOfThreeOrFive(int $number, string $expected): void
     {
-        $result = NumberPrinter::execute($number);
+        $result = NumberPrinter::convertNumber($number);
 
         self::assertEquals(
             $expected,
@@ -66,7 +66,7 @@ class NumberPrinterTest extends TestCase
      */
     public function testWeReturnFizzWhenNumberIsOnlyMultipleOfThree(int $number, string $expected): void
     {
-        $result = NumberPrinter::execute($number);
+        $result = NumberPrinter::convertNumber($number);
 
         self::assertEquals(
             $expected,
@@ -82,7 +82,7 @@ class NumberPrinterTest extends TestCase
      */
     public function testWeReturnBuzzWhenNumberIsOnlyMultipleOfFive(int $number, string $expected): void
     {
-        $result = NumberPrinter::execute($number);
+        $result = NumberPrinter::convertNumber($number);
 
         self::assertEquals(
             $expected,
@@ -98,14 +98,14 @@ class NumberPrinterTest extends TestCase
      */
     public function testWeReturnFizzBuzzWhenNumberIsMultipleOfBothThreeAndFive(int $number, string $expected): void
     {
-        $result = NumberPrinter::execute($number);
+        $result = NumberPrinter::convertNumber($number);
 
         self::assertEquals($expected, $result, "When taking 15 we should return 'FizzBuzz'");
     }
 
     public function testPrintNumbersOneToTen(): void
     {
-        $result = NumberPrinter::printNumbers();
+        $result = NumberPrinter::execute();
 
         $expected = <<<EOT
         1
