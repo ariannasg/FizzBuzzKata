@@ -52,6 +52,15 @@ class NumberTest extends TestCase
         ];
     }
 
+    public function provideNumbersContainingFive(): array
+    {
+        return [
+            [52, "Buzz"],
+            [151, "Buzz"],
+            [254, "Buzz"],
+        ];
+    }
+
     /**
      * @param int $number
      * @return string
@@ -137,12 +146,17 @@ class NumberTest extends TestCase
         );
     }
 
-    public function testWeReturnBuzzWhenNumberContainsFive(): void
+    /**
+     * @dataProvider provideNumbersContainingFive
+     * @param int $number
+     * @param string $expected
+     */
+    public function testWeReturnBuzzWhenNumberContainsFive(int $number, string $expected): void
     {
-        $result = $this->convertNumber(52);
+        $result = $this->convertNumber($number);
 
         self::assertEquals(
-            "Buzz",
+            $expected,
             $result,
             "When taking a number that contains 5 we should return 'Buzz'"
         );
