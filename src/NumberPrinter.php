@@ -4,9 +4,12 @@ namespace FizzBuzz;
 
 class NumberPrinter
 {
-
-    public static function printNumber(int $number): int
+    public static function execute(int $number): string
     {
-        return $number;
+        if ($number === 3) {
+            return "Fizz";
+        }
+
+        return (string)$number;
     }
 }
