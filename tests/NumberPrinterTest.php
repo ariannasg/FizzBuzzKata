@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class NumberPrinterTest extends TestCase
 {
-    public function testPrintNumbersOneToTen(): void
+    public function testCanPrintNumbersFromOneToTen(): void
     {
         $result = NumberPrinter::execute(1, 10);
 
@@ -31,11 +31,11 @@ class NumberPrinterTest extends TestCase
         );
     }
 
-    public function testPrintNumbersIsGoingToRunFromOneToAHundredByDefault(): void
+    public function testPrintsNumbersFromOneToAHundredByDefault(): void
     {
         $result = NumberPrinter::execute();
 
-        $expected = <<<EOT
+        $expectedOneToTenOutput = <<<EOT
         1
         2
         Fizz
@@ -49,10 +49,13 @@ class NumberPrinterTest extends TestCase
         EOT;
 
         self::assertNotEquals(
-            $expected,
+            $expectedOneToTenOutput,
             $result,
-            "When printing all numbers from 1 to 100, we should not get: \n{$expected}"
+            "When printing all numbers from 1 to 100 by default, we should not get: \n{$expectedOneToTenOutput}"
         );
+        self::assertStringContainsString(
+            '98',
+            $result,
+            "When printing all numbers from 1 to 100  by default, 98 should be in the return string");
     }
-
 }
