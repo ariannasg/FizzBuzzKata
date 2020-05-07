@@ -18,6 +18,9 @@ class Number
         $this->value = $value;
     }
 
+    /**
+     * @return string
+     */
     public function convertToString(): string
     {
         if ($this->isMultipleOfBothThreeAndFive()) {
@@ -28,11 +31,7 @@ class Number
             return self::FIZZ;
         }
 
-        if ($this->isMultipleOfFive()) {
-            return self::BUZZ;
-        }
-
-        if (strpos((string)$this->value, '5') !== false) {
+        if ($this->isMultipleOfFive() || $this->containsFive()) {
             return self::BUZZ;
         }
 
@@ -69,5 +68,13 @@ class Number
     private function containsThree(): bool
     {
         return strpos((string)$this->value, '3') !== false;
+    }
+
+    /**
+     * @return bool
+     */
+    private function containsFive(): bool
+    {
+        return strpos((string)$this->value, '5') !== false;
     }
 }
