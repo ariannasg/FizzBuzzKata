@@ -4,9 +4,9 @@ namespace FizzBuzz;
 
 class Number
 {
-    public const MULTIPLE_OF_THREE = 'Fizz';
-    public const MULTIPLE_OF_FIVE = 'Buzz';
-    public const MULTIPLE_OF_THREE_AND_FIVE = 'FizzBuzz';
+    private const FIZZ = 'Fizz';
+    private const BUZZ = 'Buzz';
+    private const FIZZ_BUZZ = 'FizzBuzz';
 
     /**
      * @var int
@@ -21,21 +21,21 @@ class Number
     public function convertToString(): string
     {
         if ($this->isMultipleOfBothThreeAndFive()) {
-            return self::MULTIPLE_OF_THREE_AND_FIVE;
+            return self::FIZZ_BUZZ;
         }
 
         if ($this->isMultipleOfThree()) {
-            return self::MULTIPLE_OF_THREE;
+            return self::FIZZ;
         }
 
         if ($this->isMultipleOfFive()) {
-            return self::MULTIPLE_OF_FIVE;
+            return self::BUZZ;
         }
 
         $valueAsString = (string)$this->value;
 
         if (strpos($valueAsString, '3') !== false) {
-            return 'Fizz';
+            return self::FIZZ;
         }
 
         return $valueAsString;
