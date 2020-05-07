@@ -111,4 +111,15 @@ class NumberTest extends TestCase
 
         self::assertEquals($expected, $result, "When taking 15 we should return 'FizzBuzz'");
     }
+
+    public function testWeReturnFizzWhenNumberContainsThree(): void
+    {
+        $result = $this->convertNumber(13);
+
+        self::assertEquals(
+            "Fizz",
+            $result,
+            "When taking a number that contains 3 we should return 'Fizz'"
+        );
+    }
 }

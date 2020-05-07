@@ -32,7 +32,13 @@ class Number
             return self::MULTIPLE_OF_FIVE;
         }
 
-        return (string)$this->value;
+        $valueAsString = (string)$this->value;
+
+        if (strpos($valueAsString, '3') !== false) {
+            return 'Fizz';
+        }
+
+        return $valueAsString;
     }
 
     /**
