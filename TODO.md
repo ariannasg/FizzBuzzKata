@@ -1,0 +1,2 @@
+- [ ] Modify [INSERT CONTACT METHOD] in CONTRIBUTING.md
+- [ ] Consider extra validation, env vars, logging, error-handling, caching, etc.
