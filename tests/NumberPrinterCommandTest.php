@@ -18,3 +18,6 @@ class NumberPrinterCommandTest extends TestCase
         $command->execute();
     }
 }
+
+// uncomment to get full output
+// (new NumberPrinterCommand(new NumberPrinter()))->execute();
