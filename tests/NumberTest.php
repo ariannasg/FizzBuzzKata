@@ -44,14 +44,22 @@ class NumberTest extends TestCase
     }
 
     /**
+     * @param int $number
+     * @return string
+     */
+    private function convertNumber(int $number): string
+    {
+        return (new Number($number))->convertToString();
+    }
+
+    /**
      * @dataProvider provideNonMultiplesOfThreeOrFive
      * @param int $number
      * @param string $expected
      */
     public function testWeReturnTheSameNumberWhenIsNotAMultipleOfThreeOrFive(int $number, string $expected): void
     {
-        $number = new Number($number);
-        $result = $number->convertToString();
+        $result = $this->convertNumber($number);
 
         self::assertEquals(
             $expected,
@@ -67,8 +75,7 @@ class NumberTest extends TestCase
      */
     public function testWeReturnFizzWhenNumberIsOnlyMultipleOfThree(int $number, string $expected): void
     {
-        $number = new Number($number);
-        $result = $number->convertToString();
+        $result = $this->convertNumber($number);
 
         self::assertEquals(
             $expected,
@@ -84,8 +91,7 @@ class NumberTest extends TestCase
      */
     public function testWeReturnBuzzWhenNumberIsOnlyMultipleOfFive(int $number, string $expected): void
     {
-        $number = new Number($number);
-        $result = $number->convertToString();
+        $result = $this->convertNumber($number);
 
         self::assertEquals(
             $expected,
@@ -101,8 +107,7 @@ class NumberTest extends TestCase
      */
     public function testWeReturnFizzBuzzWhenNumberIsMultipleOfBothThreeAndFive(int $number, string $expected): void
     {
-        $number = new Number($number);
-        $result = $number->convertToString();
+        $result = $this->convertNumber($number);
 
         self::assertEquals($expected, $result, "When taking 15 we should return 'FizzBuzz'");
     }
