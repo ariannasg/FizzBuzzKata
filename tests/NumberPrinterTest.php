@@ -25,7 +25,7 @@ class NumberPrinterTest extends TestCase
         ];
     }
 
-    public function testWeCanReturnTheSameNumber(): void
+    public function testWeReturnTheSameNumberWhenTheNumberIsNotAMultipleOfThreeOrFive(): void
     {
         $result = NumberPrinter::execute(1);
 
@@ -37,7 +37,7 @@ class NumberPrinterTest extends TestCase
      * @param int $number
      * @param string $expected
      */
-    public function testWeReturnFizzWhenNumberIsMultipleOfThree(int $number, string $expected): void
+    public function testWeReturnFizzWhenNumberIsOnlyMultipleOfThree(int $number, string $expected): void
     {
         $result = NumberPrinter::execute($number);
 
@@ -53,7 +53,7 @@ class NumberPrinterTest extends TestCase
      * @param int $number
      * @param string $expected
      */
-    public function testWeReturnBuzzWhenNumberIsMultipleOfFive(int $number, string $expected): void
+    public function testWeReturnBuzzWhenNumberIsOnlyMultipleOfFive(int $number, string $expected): void
     {
         $result = NumberPrinter::execute($number);
 
