@@ -4,6 +4,7 @@ Write a program that prints the numbers from 1 to 100. But for multiples of thre
 * [Objectives](#objectives)
 * [Local setup](#local-setup)
 * [Testing](#testing)
+* [TODOs](#todos)
 * [Contributing](#contributing)
 * [License](#license)
 
@@ -32,6 +33,9 @@ For running all tests:
 ```
 make test
 ```
+
+## TODOs
+List of TODOs can be found [here](TODO.md).
 
 ## Contributing
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](.github/CONTRIBUTING.md)
