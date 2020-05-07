@@ -24,7 +24,7 @@ class Number
             return self::FIZZ_BUZZ;
         }
 
-        if ($this->isMultipleOfThree()) {
+        if ($this->isMultipleOfThree() || ($this->containsThree())) {
             return self::FIZZ;
         }
 
@@ -32,13 +32,7 @@ class Number
             return self::BUZZ;
         }
 
-        $valueAsString = (string)$this->value;
-
-        if (strpos($valueAsString, '3') !== false) {
-            return self::FIZZ;
-        }
-
-        return $valueAsString;
+        return (string)$this->value;
     }
 
     /**
@@ -63,5 +57,13 @@ class Number
     private function isMultipleOfFive(): bool
     {
         return $this->value % 5 === 0;
+    }
+
+    /**
+     * @return bool
+     */
+    private function containsThree(): bool
+    {
+        return strpos((string)$this->value, '3') !== false;
     }
 }
