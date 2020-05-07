@@ -7,6 +7,15 @@ use PHPUnit\Framework\TestCase;
 
 class NumberPrinterTest extends TestCase
 {
+    public function provideNonMultiplesOfThreeOrFive(): array
+    {
+        return [
+            [1, "1"],
+            [2, "2"],
+            [4, "4"],
+        ];
+    }
+
     public function provideOnlyMultiplesOfThree(): array
     {
         return [
@@ -34,11 +43,20 @@ class NumberPrinterTest extends TestCase
         ];
     }
 
-    public function testWeReturnTheSameNumberWhenTheNumberIsNotAMultipleOfThreeOrFive(): void
+    /**
+     * @dataProvider provideNonMultiplesOfThreeOrFive
+     * @param int $number
+     * @param string $expected
+     */
+    public function testWeReturnTheSameNumberWhenIsNotAMultipleOfThreeOrFive(int $number, string $expected): void
     {
-        $result = NumberPrinter::execute(1);
+        $result = NumberPrinter::execute($number);
 
-        self::assertEquals(1, $result, 'When taking 1 we should return 1');
+        self::assertEquals(
+            $expected,
+            $result,
+            'When taking a number that is not multiple of 3 or 5 we should return the same number'
+        );
     }
 
     /**
@@ -80,8 +98,8 @@ class NumberPrinterTest extends TestCase
      */
     public function testWeReturnFizzBuzzWhenNumberIsMultipleOfBothThreeAndFive(int $number, string $expected): void
     {
-        $result = NumberPrinter::execute(15);
+        $result = NumberPrinter::execute($number);
 
-        self::assertEquals("FizzBuzz", $result, "When taking 15 we should return 'FizzBuzz'");
+        self::assertEquals($expected, $result, "When taking 15 we should return 'FizzBuzz'");
     }
 }
