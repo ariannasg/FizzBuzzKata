@@ -32,6 +32,10 @@ class Number
             return self::BUZZ;
         }
 
+        if (strpos((string)$this->value, '5') !== false) {
+            return self::BUZZ;
+        }
+
         return (string)$this->value;
     }
 

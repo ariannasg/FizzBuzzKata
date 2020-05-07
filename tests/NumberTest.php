@@ -136,4 +136,15 @@ class NumberTest extends TestCase
             "When taking a number that contains 3 we should return 'Fizz'"
         );
     }
+
+    public function testWeReturnBuzzWhenNumberContainsFive(): void
+    {
+        $result = $this->convertNumber(52);
+
+        self::assertEquals(
+            "Buzz",
+            $result,
+            "When taking a number that contains 5 we should return 'Buzz'"
+        );
+    }
 }
