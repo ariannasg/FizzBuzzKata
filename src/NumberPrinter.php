@@ -7,7 +7,7 @@ class NumberPrinter
     private const DEFAULT_START_NUMBER = 1;
     private const DEFAULT_END_NUMBER = 100;
 
-    public static function execute(
+    public function execute(
         int $startNumber = self::DEFAULT_START_NUMBER,
         int $endNumber = self::DEFAULT_END_NUMBER
     ): string

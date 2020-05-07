@@ -9,7 +9,7 @@ class NumberPrinterTest extends TestCase
 {
     public function testCanPrintNumbersFromOneToTen(): void
     {
-        $result = NumberPrinter::execute(1, 10);
+        $result = (new NumberPrinter)->execute(1, 10);
 
         $expectedOneToTenOutput = <<<EOT
         1
@@ -33,7 +33,7 @@ class NumberPrinterTest extends TestCase
 
     public function testPrintsNumbersFromOneToAHundredByDefault(): void
     {
-        $result = NumberPrinter::execute();
+        $result = (new NumberPrinter)->execute();
 
         $expectedOneToTenOutput = <<<EOT
         1
@@ -56,6 +56,7 @@ class NumberPrinterTest extends TestCase
         self::assertStringContainsString(
             '98',
             $result,
-            "When printing all numbers from 1 to 100  by default, 98 should be in the return string");
+            "When printing all numbers from 1 to 100  by default, 98 should be in the return string"
+        );
     }
 }
