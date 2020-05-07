@@ -12,7 +12,7 @@ class NumberPrinterTest extends TestCase
         return [
             [3, "Fizz", "When taking 3 we should return 'Fizz"],
             [6, "Fizz", "When taking 6 we should return 'Fizz"],
-            [9, "Fizz", "When taking 6 we should return 'Fizz"],
+            [9, "Fizz", "When taking 9 we should return 'Fizz"],
         ];
     }
 
@@ -34,5 +34,12 @@ class NumberPrinterTest extends TestCase
         $result = NumberPrinter::execute($number);
 
         self::assertEquals($expected, $result, $msg);
+    }
+
+    public function testWeReturnFizzWhenNumberIsMultipleOfFive(): void
+    {
+        $result = NumberPrinter::execute(5);
+
+        self::assertEquals("Buzz", $result, "When taking 5 we should return 'Buzz");
     }
 }
