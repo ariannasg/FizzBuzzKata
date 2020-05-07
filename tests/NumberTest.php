@@ -43,6 +43,15 @@ class NumberTest extends TestCase
         ];
     }
 
+    public function provideNumbersContainingThree(): array
+    {
+        return [
+            [13, "Fizz"],
+            [38, "Fizz"],
+            [134, "Fizz"],
+        ];
+    }
+
     /**
      * @param int $number
      * @return string
@@ -112,12 +121,17 @@ class NumberTest extends TestCase
         self::assertEquals($expected, $result, "When taking 15 we should return 'FizzBuzz'");
     }
 
-    public function testWeReturnFizzWhenNumberContainsThree(): void
+    /**
+     * @dataProvider provideNumbersContainingThree
+     * @param int $number
+     * @param string $expected
+     */
+    public function testWeReturnFizzWhenNumberContainsThree(int $number, string $expected): void
     {
-        $result = $this->convertNumber(13);
+        $result = $this->convertNumber($number);
 
         self::assertEquals(
-            "Fizz",
+            $expected,
             $result,
             "When taking a number that contains 3 we should return 'Fizz'"
         );
