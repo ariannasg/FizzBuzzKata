@@ -3,9 +3,6 @@
 - [ ] Feature containing non-breaking changes
 - [ ] Feature containing breaking changes
 
-## Ticket
-[https://www.atlassian.com/software/jira/#](https://www.atlassian.com/software/jira)
-
 ## Summary
 
 
@@ -25,6 +22,5 @@
 - [ ] All tests pass locally
 - [ ] There are no vulnerability warnings
 - [ ] There are no dependency deprecation warnings
-- [ ] Ticket has been updated accordingly
 - [ ] New logging has been added (if needed)
 - [ ] Documentation has been updated accordingly (if needed)
