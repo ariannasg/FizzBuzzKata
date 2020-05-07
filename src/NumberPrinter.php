@@ -22,8 +22,6 @@ class NumberPrinter
             }
         }
 
-        printf($result);
-
         return $result;
     }
 }
