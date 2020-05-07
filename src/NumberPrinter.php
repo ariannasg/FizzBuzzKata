@@ -10,18 +10,45 @@ class NumberPrinter
 
     public static function execute(int $number): string
     {
-        if (($number % 3 === 0) && ($number % 5 === 0)) {
+        if (self::isMultipleOfBothThreeAndFive($number)) {
             return self::MULTIPLE_OF_THREE_AND_FIVE;
         }
 
-        if ($number % 3 === 0) {
+        if (self::isMultipleOfThree($number)) {
             return self::MULTIPLE_OF_THREE;
         }
 
-        if ($number % 5 === 0) {
+        if (self::isMultipleOfFive($number)) {
             return self::MULTIPLE_OF_FIVE;
         }
 
         return (string)$number;
+    }
+
+    /**
+     * @param int $number
+     * @return bool
+     */
+    private static function isMultipleOfBothThreeAndFive(int $number): bool
+    {
+        return self::isMultipleOfThree($number) && self::isMultipleOfFive($number);
+    }
+
+    /**
+     * @param int $number
+     * @return bool
+     */
+    private static function isMultipleOfThree(int $number): bool
+    {
+        return $number % 3 === 0;
+    }
+
+    /**
+     * @param int $number
+     * @return bool
+     */
+    private static function isMultipleOfFive(int $number): bool
+    {
+        return $number % 5 === 0;
     }
 }
