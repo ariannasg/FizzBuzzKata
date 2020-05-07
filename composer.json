@@ -6,12 +6,12 @@
     },
     "autoload": {
         "psr-4": {
-            "FizzBuzz": "src/"
+            "FizzBuzz\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "FizzBuzz\\Test": "tests/"
+            "FizzBuzz\\Test\\": "tests/"
         }
     }
 }
