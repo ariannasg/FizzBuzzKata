@@ -4,18 +4,26 @@ namespace FizzBuzz;
 
 class NumberPrinter
 {
-    public static function execute(): string
+    private const DEFAULT_START_NUMBER = 1;
+    private const DEFAULT_END_NUMBER = 100;
+
+    public static function execute(
+        int $startNumber = self::DEFAULT_START_NUMBER,
+        int $endNumber = self::DEFAULT_END_NUMBER
+    ): string
     {
         $result = '';
 
-        for ($numberValue = 1; $numberValue <= 10; $numberValue++) {
-            $number = new Number($numberValue);
-            $result.= $number->convertNumber();
+        for ($value = $startNumber; $value <= $endNumber; $value++) {
+            $result .= (new Number($value))->convertToString();
 
-            if ($numberValue <= 9) {
-                $result.= "\n";
+            if ($value <= $endNumber - 1) {
+                $result .= "\n";
             }
         }
+
+        printf($result);
+
         return $result;
     }
 }

@@ -18,7 +18,7 @@ class Number
         $this->value = $value;
     }
 
-    public function convertNumber(): string
+    public function convertToString(): string
     {
         if ($this->isMultipleOfBothThreeAndFive()) {
             return self::MULTIPLE_OF_THREE_AND_FIVE;

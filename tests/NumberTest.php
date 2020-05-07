@@ -51,7 +51,7 @@ class NumberTest extends TestCase
     public function testWeReturnTheSameNumberWhenIsNotAMultipleOfThreeOrFive(int $number, string $expected): void
     {
         $number = new Number($number);
-        $result = $number->convertNumber();
+        $result = $number->convertToString();
 
         self::assertEquals(
             $expected,
@@ -68,7 +68,7 @@ class NumberTest extends TestCase
     public function testWeReturnFizzWhenNumberIsOnlyMultipleOfThree(int $number, string $expected): void
     {
         $number = new Number($number);
-        $result = $number->convertNumber();
+        $result = $number->convertToString();
 
         self::assertEquals(
             $expected,
@@ -85,7 +85,7 @@ class NumberTest extends TestCase
     public function testWeReturnBuzzWhenNumberIsOnlyMultipleOfFive(int $number, string $expected): void
     {
         $number = new Number($number);
-        $result = $number->convertNumber();
+        $result = $number->convertToString();
 
         self::assertEquals(
             $expected,
@@ -102,7 +102,7 @@ class NumberTest extends TestCase
     public function testWeReturnFizzBuzzWhenNumberIsMultipleOfBothThreeAndFive(int $number, string $expected): void
     {
         $number = new Number($number);
-        $result = $number->convertNumber();
+        $result = $number->convertToString();
 
         self::assertEquals($expected, $result, "When taking 15 we should return 'FizzBuzz'");
     }
