@@ -7,6 +7,15 @@ use PHPUnit\Framework\TestCase;
 
 class NumberPrinterTest extends TestCase
 {
+    public function provideMultiplesOfThree(): array
+    {
+        return [
+            [3, "Fizz", "When taking 3 we should return 'Fizz"],
+            [6, "Fizz", "When taking 6 we should return 'Fizz"],
+            [9, "Fizz", "When taking 6 we should return 'Fizz"],
+        ];
+    }
+
     public function testWeCanReturnTheSameNumber(): void
     {
         $result = NumberPrinter::execute(1);
@@ -14,10 +23,16 @@ class NumberPrinterTest extends TestCase
         self::assertEquals(1, $result, 'When taking 1 we should return 1');
     }
 
-    public function testWeReturnFizzWhenNumberIsMultipleOfThree(): void
+    /**
+     * @dataProvider provideMultiplesOfThree
+     * @param int $number
+     * @param string $expected
+     * @param string $msg
+     */
+    public function testWeReturnFizzWhenNumberIsMultipleOfThree(int $number, string $expected, string $msg): void
     {
-        $result = NumberPrinter::execute(3);
+        $result = NumberPrinter::execute($number);
 
-        self::assertEquals("Fizz", $result, "When taking 3 we should return 'Fizz");
+        self::assertEquals($expected, $result, $msg);
     }
 }

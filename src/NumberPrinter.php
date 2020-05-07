@@ -6,7 +6,7 @@ class NumberPrinter
 {
     public static function execute(int $number): string
     {
-        if ($number === 3) {
+        if ($number % 3 === 0) {
             return "Fizz";
         }
 
