@@ -63,4 +63,11 @@ class NumberPrinterTest extends TestCase
             "When taking multiples of 5 (that are not multiples of 3) we should return 'Buzz'"
         );
     }
+
+    public function testWeReturnFizzBuzzWhenNumberIsMultipleOfBothThreeAndFive(): void
+    {
+        $result = NumberPrinter::execute(15);
+
+        self::assertEquals("FizzBuzz", $result, "When taking 15 we should return 'FizzBuzz'");
+    }
 }
