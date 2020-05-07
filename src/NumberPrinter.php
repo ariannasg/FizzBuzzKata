@@ -51,4 +51,17 @@ class NumberPrinter
     {
         return $number % 5 === 0;
     }
+
+    public static function printNumbers(): string
+    {
+        $result = '';
+        for ($i = 1; $i <= 10; $i++) {
+            $result.= self::execute($i);
+
+            if ($i <= 9) {
+                $result.= "\n";
+            }
+        }
+        return $result;
+    }
 }
