@@ -1,4 +1,4 @@
-![CI-Workflow](https://github.com/ariannasg/FizzBuzzKata/workflows/CI-Workflow/badge.svg)
+![CI Workflow](https://github.com/ariannasg/FizzBuzzKata/workflows/CI%20Workflow/badge.svg)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](.github/CONTRIBUTING.md)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 
@@ -46,7 +46,7 @@ make test
 ```
 
 ## TODOs
-Please see list of [TODOs](TODO.md).
+Please see list of [TO````DOs](TODO.md).
 
 ## Contributing
 Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for understanding the code of conduct.
