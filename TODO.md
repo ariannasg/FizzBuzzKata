@@ -1,3 +1,2 @@
-- [ ] Add ability to run the `NumberPrinterCommand::execute` from the terminal. 
-- [ ] Modify [INSERT CONTACT METHOD] in CONTRIBUTING.md
+- [ ] Add ability to run `NumberPrinterCommand::execute` from the terminal. 
 
