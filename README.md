@@ -45,7 +45,7 @@ make test
 ```
 
 ## TODOs
-Please see list of [TO````DOs](TODO.md).
+Please see list of [TODOs](TODO.md).
 
 ## Contributing
 Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for understanding the code of conduct.
