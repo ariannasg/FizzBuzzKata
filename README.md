@@ -20,8 +20,7 @@ Write a program that prints the numbers from 1 to 100. But for multiples of thre
 * [License](#license)
 
 ## Objectives
-FizzBuzz Kata for introducing TDD.
-Try out TDD using PHPUnit for solving the FizzBuzz problem.
+Practice PHP and try out TDD for solving the FizzBuzz problem.
 
 ## Local setup
 Follow these instructions to get the project up and running for local development and testing purposes:
